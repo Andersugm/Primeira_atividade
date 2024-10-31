@@ -115,15 +115,17 @@ public class RespostaListaExercicio {
 	public static void imprimirElementosPrimos(int[] array) 
 	{
 		for (int i = 0; i < array.length; i++){
-			int numero = array[i];
-			if(numero > 1){
+			int atual = array[i];
+			
+			if(atual > 1){
 				boolean primo = true;
-				for (int j = 2; j <= Math.sqrt(numero);j++){
-					if(numero % j == 0){
+				
+				for (int j = 2; j <= atual; j++){
+					if(atual % j == 0){
 						primo = false;
-						break;
 					}
 				}
+				
 				if(primo){
 					System.out.print(numero + " ");
 				}
@@ -141,7 +143,9 @@ public class RespostaListaExercicio {
 	public static void imprimirElementosImpares(int[] array) 
 	{
 		for(int i = 0; i < array.length; i++){
+			
 			if(array[i] % 2 != 0){
+				
 				System.out.print(array[i] + " ");
 			}
 		}
@@ -157,7 +161,9 @@ public class RespostaListaExercicio {
 	public static void imprimirElementosPares(int[] array) 
 	{
 		for(int i = 0; i < array.length; i++){
+			
 			if(array[i] % 2 == 0){
+				
 				System.out.print(array[i] + " ");
 			}
 		}
@@ -172,15 +178,19 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		int maior = array[0];
-		int menor = array[0];
+		int maior = 0;
+		int menor = 0;
 		
 		for(int i = 1; i < array.length; i++){
 			if(array[i] > maior){
+				
 				maior = array[i];
+				
 			}
 			if(array[i] < menor){
+				
 				menor = array[i];
+				
 			}
 		}
 		System.out.print(maior + " " + menor + " ");
@@ -195,10 +205,12 @@ public class RespostaListaExercicio {
 	public static float calcularMediaAritmetica(int[] array) 
 	{
 		int soma = 0;
+		int media = 0;
 		for(int i = 0; i < array.length; i++){
 			soma += array[i];
 		}
-		return (float)soma/array.length;
+		media = soma/array.length;	
+		return media
 	}
 	}
 	
